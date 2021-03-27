@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+
+		<title>Multiroom Chat</title>
+
+		<!-- bootstrap - link cdn -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+		<!-- estilo -->
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Multiroom Chat</a>
+
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarText"
+					aria-controls="navbarText"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarText">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" href="#" id="exibe_chat">Chat</a>
+						</li>
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" href="#" id="exibe_participantes">Participantes</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row conversa" id="conversa">
+				<div class="col-md-1"></div>
+				<div class="col-md-10" id="dialogos"></div>
+				<div class="col-md-1"></div>
+			</div>
+
+			<div class="row participantes" id="participantes" style="display: none">
+				<div class="col-md-1"></div>
+				<div class="col-md-10" id="pessoas"></div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+
+		<nav class="navbar fixed-bottom navbar-light bg-light">
+			<div class="container">
+				<div class="col-md-12">
+					<i class="fas fa-paper-plane"></i>
+					<div class="input-group">
+						<input type="hidden" value="<%= dadosForm.apelido %>" id="apelido" />
+						<input type="hidden" value="0" id="apelido_atualizado_nos_clientes" />
+
+						<div class="input-group">
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Mensagem"
+								id="mensagem"
+								aria-label="Input group example"
+								aria-describedby="btnGroupAddon"
+							/>
+
+							<button id="enviar_mensagem" class="input-group-text" id="btnGroupAddon">
+								<img src="img/icons/chevron-double-right.svg" alt="Bootstrap" width="32" height="32" />
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<script src="/socket.io/socket.io.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/page-chat.js"></script>
+	</body>
+</html>

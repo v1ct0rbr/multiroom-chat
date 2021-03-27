@@ -1,0 +1,48 @@
+<%- include('./includes/header.ejs', {style:'page-index'}) %>
+
+		<div class="container">
+
+
+            <div class="card" style="width: 18rem;">
+                
+                <img src="images/multi-user.png" width="100" class="card-img-top" alt="Multiroom Chat"/>
+                <div class="card-body">
+                  <h5 class="card-title">Entre com seu apelido</h5>
+                  <form accept-charset="UTF-8" role="form" class="form-signin" action="/chat" method="POST">
+                    <fieldset>
+                        <label class="panel-login">
+                            <div class="login_result"></div>
+                        </label>
+                         
+                        <div class="mb-3">
+                        <input class="form-control" placeholder="Nome ou apelido" id="apelido" name="apelido" type="text">
+                        </div>
+                        <br></br>
+                        <div class="d-grid gap-2">
+                        <input class="btn btn-lg btn-success btn-block" type="submit" id="entrar" value="Entrar »">
+                    </div>
+                    </fieldset>
+                </form>
+                </div>
+              </div>
+                       
+                    
+                   
+                      
+                   
+                           
+                </div>
+                <% if(validacao.length > 0){ %>
+                           
+                    <div id="messages" class="alert alert-danger" >
+                        <strong>Atenção!</strong>
+                        <ul>
+                            <% for(var i = 0; i < validacao.length; i++){ %>
+                                <li><%= validacao[i].msg %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+              
+        <% } %>
+    
+			<%- include('./includes/footer.ejs', {script : null}) %>
