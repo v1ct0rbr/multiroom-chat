@@ -16,7 +16,7 @@
 		"bootstrap-icons": "^1.4.0",
 		"consign": "^0.1.6",
 		"ejs": "^2.5.6",
-		"express": "^4.15.3",
+		"express": "^4.17.3",
 		"express-validator": "^6.10.0",
 		"socket.io": "^2.4.1"
 	},
